@@ -179,7 +179,7 @@ const ticTacToeGameDisplay = ((doc) => {
     const highlightCurrMovePlayer = (marker) => {
         const activePlayerEl = doc.querySelector('.active');
 
-        doc.querySelector(`[data-marker=${marker}]`).parentElement.appendChild(activePlayerEl);
+        doc.querySelector(`[data-marker=${marker}]`).appendChild(activePlayerEl);
     }
 
     const createPlayerEl = (marker, name = "") => {
@@ -228,7 +228,7 @@ const ticTacToeGameDisplay = ((doc) => {
     const highlightWinner = (marker) => {
         const crown = doc.querySelector(".gameWinner");
         crown.style.display = "inherit";
-        doc.querySelector(`[data-marker=${marker}]`).parentElement.appendChild(crown);
+        doc.querySelector(`[data-marker=${marker}]`).appendChild(crown);
 
     }
 
