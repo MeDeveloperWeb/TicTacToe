@@ -10,36 +10,64 @@
 </head>
 <body>
     <main>
-            <div class="playerCont">
-                <div class="player">
-                    <label for="playerX">Player X</label>
-                    <input type="text" id="playerX"  required>
-                    <div class="active"></div>
+        <div class="playerCont btnCont">
+            <div class="showPlayerForm">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div class="player textInput" data-marker="X">
+                <i class="fa-solid fa-trash removePlayer"></i>
+                <label for="playerX">Player X</label>
+                <input type="text" id="playerX"  required>
+                
+            </div>
+            <div class="player textInput" data-marker="O">
+                <i class="fa-solid fa-trash removePlayer"></i>
+                <label for="playerO">Player O</label>
+                <input type="text" id="playerO"  required>
+            </div>
+        </div>
+        <div class="boardCont"></div>
+        <div class="gameBtnCont">
+            <div class="btnCont setGame">
+                <button class="btn startGame">Start Game</button>
+                <div class="btn">
+                    <label for="tttGridSizeSlider">Board Size:</label>
+                    <input type="range" id="tttGridSizeSlider" title="Grid Size" min="3" max="10" value="3">
+                    <input type="number" id="tttGridSizeText" min="3" max="10" value="3">
                 </div>
-                <div class="player">
-                    <label for="playerO">Player O</label>
-                    <input type="text" id="playerO"  required>
+            </div>
+            <div class="btnCont resetGame">
+                <button class="btn reset">Reset</button>
+            </div>
+        </div>
+        <dialog class="playerFormCont">
+            <form>
+                <div class="textInput">
+                    <label for="playerName">Player Name</label>
+                    <input type="text" id="playerName" required>
                 </div>
-                <div class="addPlayer">
-                    <i class="fa-solid fa-user-plus"></i>
+                <div class="textInput">
+                    <label for="playerMarker">Player Marker</label>
+                    <input type="text" id="playerMarker" required size="1" maxlength="1">
                 </div>
+                <div class="btnCont">
+                    <button type="submit">Add Player</button>
+                    <button class="closePlayerFormBtn">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+        <dialog class="errors">
+            <div>
+                <div class="icon">!</div>
+                <div class="msgCont">
+                    
+                </div>
+                <div class="icon close">×</div>
             </div>
-        <div class="boardCont">
-            <div class="row" id="row1">
-                <div class="col" id="col1"></div>
-                <div class="col" id="col2"></div>
-                <div class="col" id="col3"></div>
-            </div>
-            <div class="row" id="row2">
-                <div class="col" id="col1"></div>
-                <div class="col" id="col2"></div>
-                <div class="col" id="col3"></div>
-            </div>
-            <div class="row" id="row3">
-                <div class="col" id="col1"></div>
-                <div class="col" id="col2"></div>
-                <div class="col" id="col3"></div>
-            </div>
+        </dialog>
+        <div>
+            <div class="active"></div>
+            <i class="fa-solid fa-crown fa-bounce gameWinner" style="display: none;"></i>
         </div>
     </main>
 </body>
